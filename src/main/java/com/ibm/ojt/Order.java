@@ -1,5 +1,6 @@
 package com.ibm.ojt;
 
+import java.util.ArrayList;
 //import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -11,10 +12,9 @@ public class Order {
 	
 	@Id
 	private String orderId;
-	private Date orderDate;
+	private String orderDate = new Date().toString();
 	private String customerId;
-	private List<Object> orderItems;
-//	private List<Object> orderItems; //to be decided
+	private List<OrderItem> orderItems = new ArrayList<OrderItem>();
 	private double totalPrice;
 	
 	public String getCustomerId() {
@@ -29,16 +29,16 @@ public class Order {
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
 	}
-	public Date getOrderDate() {
+	public String getOrderDate() {
 		return orderDate;
 	}
-	public void setOrderDate(Date orderDate) {
+	public void setOrderDate(String orderDate) {
 		this.orderDate = orderDate;
 	}
-	public List<Object> getOrderItems() {
+	public List<OrderItem> getOrderItems() {
 		return orderItems;
 	}
-	public void setOrderItems(List<Object> orderItems) {
+	public void setOrderItems(List<OrderItem> orderItems) {
 		this.orderItems = orderItems;
 	}
 	public double getTotalPrice() {

@@ -18,6 +18,7 @@ public class Order {
 	private String customerId;
 	private List<OrderItem> orderItems = new ArrayList<OrderItem>();
 	private double totalPrice;
+	private String status;
 	
 	public String getCustomerId() {
 		return customerId;
@@ -42,5 +43,11 @@ public class Order {
 	}
 	public void setTotalPrice(Double totalPrice) {
 		this.totalPrice = totalPrice;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 }

@@ -18,19 +18,19 @@ public class Order {
 	private String customerId;
 	private List<OrderItem> orderItems = new ArrayList<OrderItem>();
 	private double totalPrice;
-	private String status;
+	private final String status = "CL";
 	
-	public String getCustomerId() {
-		return customerId;
-	}
-	public void setCustomerId(String customerId) {
-		this.customerId = customerId;
-	}
 	public String getOrderId() {
 		return orderId;
 	}
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
+	}
+	public String getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
 	}
 	public List<OrderItem> getOrderItems() {
 		return orderItems;
@@ -46,8 +46,5 @@ public class Order {
 	}
 	public String getStatus() {
 		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
 	}
 }

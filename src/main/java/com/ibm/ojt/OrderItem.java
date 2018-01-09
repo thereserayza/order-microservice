@@ -4,7 +4,6 @@ public class OrderItem {
 	
 	private String prodCode;
 	private int itemQty;
-	private int size;
 	
 	public String getProdCode() {
 		return prodCode;
@@ -17,11 +16,5 @@ public class OrderItem {
 	}
 	public void setItemQty(int itemQty) {
 		this.itemQty = itemQty;
-	}
-	public int getSize() {
-		return size;
-	}
-	public void setSize(int size) {
-		this.size = size;
 	}
 }

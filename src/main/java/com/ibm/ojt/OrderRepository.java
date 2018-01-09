@@ -15,4 +15,5 @@ public interface OrderRepository extends MongoRepository<Order, String>{
 	
 	List<Order> findByOrderDateGreaterThanEqual(@Param("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)LocalDateTime date); //negotiable www
 	List<Order> findByCustomerId(@Param("custid") String customerId);
+	Order findByOrderId(@Param("orderid") String orderId);
 }

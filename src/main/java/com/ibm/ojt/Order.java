@@ -8,12 +8,15 @@ import java.util.List;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 public class Order {
 	
 	@Id
 	private String orderId;
 	@CreatedDate
+	@DateTimeFormat(iso = ISO.DATE_TIME)
 	private LocalDateTime orderDate;
 	private String customerId;
 	private List<OrderItem> orderItems = new ArrayList<OrderItem>();

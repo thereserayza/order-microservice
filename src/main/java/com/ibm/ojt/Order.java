@@ -1,16 +1,16 @@
 package com.ibm.ojt;
 
-//import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-//import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+@Document(collection="orderdetail")
 public class Order {
 	
 	@Id
@@ -21,7 +21,7 @@ public class Order {
 	private String customerId;
 	private List<OrderItem> orderItems = new ArrayList<OrderItem>();
 	private double totalPrice;
-	private final String status = "CL";
+	private String status;
 	
 	public String getOrderId() {
 		return orderId;
@@ -49,5 +49,8 @@ public class Order {
 	}
 	public String getStatus() {
 		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 }

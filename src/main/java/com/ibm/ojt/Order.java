@@ -19,6 +19,7 @@ public class Order {
 	@DateTimeFormat(iso = ISO.DATE_TIME)
 	private LocalDateTime orderDate;
 	private String customerId;
+	private String address;
 	private List<OrderItem> orderItems = new ArrayList<OrderItem>();
 	private double totalPrice;
 	private String status;
@@ -34,6 +35,12 @@ public class Order {
 	}
 	public void setCustomerId(String customerId) {
 		this.customerId = customerId;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public List<OrderItem> getOrderItems() {
 		return orderItems;

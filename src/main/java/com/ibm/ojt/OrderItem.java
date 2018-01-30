@@ -4,6 +4,7 @@ public class OrderItem {
 	
 	private String prodCode;
 	private int itemQty;
+	private Double subtotal;
 	
 	public String getProdCode() {
 		return prodCode;
@@ -16,5 +17,11 @@ public class OrderItem {
 	}
 	public void setItemQty(int itemQty) {
 		this.itemQty = itemQty;
+	}
+	public Double getSubtotal() {
+		return subtotal;
+	}
+	public void setSubtotal(Double subtotal) {
+		this.subtotal = subtotal;
 	}
 }

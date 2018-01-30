@@ -32,7 +32,7 @@ public class OrderController {
 		return mongoTemplate.findAll(Order.class, "order");
 	}
 	
-	@GetMapping("/{customerId}")
+	@GetMapping("/user/{customerId}")
 	public List<Order> findByCustomerId(@PathVariable String customerId) {
 		Query query = new Query().addCriteria(Criteria.where("customerId").is(customerId));
 		return mongoTemplate.find(query, Order.class, "order");

@@ -15,6 +15,7 @@ public class RepositoryConfig extends RepositoryRestConfigurerAdapter {
 	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
         config.exposeIdsFor(Order.class);
     }    
+    
     public CustomConversions customConversions() {
 		return new CustomConversions(Arrays.asList(new StringToLocalDateTimeConverter()));
     }

@@ -40,8 +40,8 @@ public class OrderController {
 	
 	@GetMapping("/{customerId}/{orderDate}")
 	public List<Order> findByCustomerIdAndOrderDate(@PathVariable String customerId, 
-			@PathVariable @DateTimeFormat(iso=DateTimeFormat.ISO.DATE)LocalDate date) {
-		Query query = new Query().addCriteria(Criteria.where("customerId").is(customerId).and("orderDate").gte(date));
+			@PathVariable @DateTimeFormat(iso=DateTimeFormat.ISO.DATE)LocalDate orderDate) {
+		Query query = new Query().addCriteria(Criteria.where("customerId").is(customerId).and("orderDate").gte(orderDate));
 		return mongoTemplate.find(query, Order.class, "order");
 	}
 	

@@ -15,8 +15,10 @@ public class Order {
 	
 	@Id
 	private String orderId;
+	
 	@CreatedDate
 	@DateTimeFormat(iso = ISO.DATE_TIME)
+	
 	private LocalDateTime orderDate;
 	private String customerId;
 	private String address;

@@ -9,7 +9,7 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapt
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 @Configuration
-public class RepositoryConfig extends RepositoryRestConfigurerAdapter {
+public class ControllerConfig extends RepositoryRestConfigurerAdapter {
 	
     @Override
 	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {

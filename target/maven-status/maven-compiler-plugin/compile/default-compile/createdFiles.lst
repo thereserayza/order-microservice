@@ -1,5 +1,6 @@
-com\ibm\ojt\RepositoryConfig.class
+com\ibm\ojt\OrderController.class
 com\ibm\ojt\Order.class
 com\ibm\ojt\StringToLocalDateTimeConverter.class
 com\ibm\ojt\OrderItem.class
+com\ibm\ojt\ControllerConfig.class
 com\ibm\ojt\Application.class

@@ -34,14 +34,14 @@ public class OrderController {
 	
 	@GetMapping("/user/{customerId}")
 	public List<Order> findByCustomerId(@PathVariable String customerId) {
-		Query query = new Query().addCriteria(Criteria.where("customerId").is(customerId));
+		Query query = new Query().addCriteria(Criteria.where("customerId").is(customerId).and("status").ne("CA"));
 		return mongoTemplate.find(query, Order.class, "order");
 	}
 	
 	@GetMapping("/{customerId}/{orderDate}")
 	public List<Order> findByCustomerIdAndOrderDate(@PathVariable String customerId, 
 			@PathVariable @DateTimeFormat(iso=DateTimeFormat.ISO.DATE)LocalDate orderDate) {
-		Query query = new Query().addCriteria(Criteria.where("customerId").is(customerId).and("orderDate").gte(orderDate));
+		Query query = new Query().addCriteria(Criteria.where("customerId").is(customerId).and("orderDate").gte(orderDate).and("status").ne("CA"));
 		return mongoTemplate.find(query, Order.class, "order");
 	}
 	
@@ -63,7 +63,7 @@ public class OrderController {
 		Order _order = mongoTemplate.findOne(query, Order.class, "order");
 		if (_order != null) {
 			Update update = new Update().set("status", "CA");
-			mongoTemplate.updateFirst(query, update, "order");
+			mongoTemplate.findAndModify(query, update, Order.class, "order");
 		}
 	}
 }

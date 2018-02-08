@@ -18,7 +18,7 @@ public class Order {
 	
 	@CreatedDate
 	@DateTimeFormat(iso = ISO.DATE_TIME)
-	private LocalDateTime orderDate;
+	private LocalDateTime orderDate = LocalDateTime.now();
 	
 	private String customerId;
 	private String address;
@@ -62,8 +62,8 @@ public class Order {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public LocalDateTime getOrderDate() {
-		return orderDate;
+	public String getOrderDate() {
+		return orderDate.toString();
 	}
 	public void setOrderDate(LocalDateTime orderDate) {
 		this.orderDate = orderDate;

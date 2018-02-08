@@ -18,12 +18,12 @@ public class Order {
 	
 	@CreatedDate
 	@DateTimeFormat(iso = ISO.DATE_TIME)
-	
 	private LocalDateTime orderDate;
+	
 	private String customerId;
 	private String address;
 	private List<OrderItem> orderItems = new ArrayList<OrderItem>();
-	private double totalPrice;
+	private Double totalPrice;
 	private String status;
 	
 	public String getOrderId() {
@@ -50,7 +50,7 @@ public class Order {
 	public void setOrderItems(List<OrderItem> orderItems) {
 		this.orderItems = orderItems;
 	}
-	public double getTotalPrice() {
+	public Double getTotalPrice() {
 		return totalPrice;
 	}
 	public void setTotalPrice(Double totalPrice) {
@@ -61,5 +61,11 @@ public class Order {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public LocalDateTime getOrderDate() {
+		return orderDate;
+	}
+	public void setOrderDate(LocalDateTime orderDate) {
+		this.orderDate = orderDate;
 	}
 }

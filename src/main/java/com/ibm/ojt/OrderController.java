@@ -52,9 +52,10 @@ public class OrderController {
 	}
 	
 	@PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE)
-	public void createOrder(@RequestBody Order order) {
+	public Order createOrder(@RequestBody Order order) {
 		order.setStatus("CL");
 		mongoTemplate.save(order, "order");
+		return order;
 	}
 	
 	@PutMapping("/{orderId}")
